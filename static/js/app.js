@@ -87,13 +87,26 @@ Plotly.newPlot(gauge, data, layout);
 
 function populateMetaData(selectedMetaData){
   var panelData = document.getElementById("sample-metadata");
-
+  panelData.innerHTML = "";
+  
   panelData.append(`id:  ${selectedMetaData[0].id}`);
+  var linebreak = document.createElement("br");
+  panelData.append(linebreak);
   panelData.append(`ethnicity:  ${selectedMetaData[0].ethnicity}`);
+  var linebreak = document.createElement("br");
+  panelData.append(linebreak);
   panelData.append(`gender:  ${selectedMetaData[0].gender}`);
+  var linebreak = document.createElement("br");
+  panelData.append(linebreak);
   panelData.append(`age:  ${selectedMetaData[0].age}`);
+  var linebreak = document.createElement("br");
+  panelData.append(linebreak);
   panelData.append(`location:  ${selectedMetaData[0].location}`);
+  var linebreak = document.createElement("br");
+  panelData.append(linebreak);
   panelData.append(`bbtype:  ${selectedMetaData[0].bbtype}`);
+  var linebreak = document.createElement("br");
+  panelData.append(linebreak);
   panelData.append(`wfreq:  ${selectedMetaData[0].wfreq}`);
   
 }
@@ -128,6 +141,8 @@ function init(){
     var selectedMetaData = fullData.metadata.filter(sampleElements=> sampleElements.id === 940);
     buildBarPlot(selectedID);
     buildBubblePlot(selectedID);
+    
+    
     populateMetaData(selectedMetaData);
     buildGaugePlot(selectedMetaData);    
   });
